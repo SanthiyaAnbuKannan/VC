@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Restaurant Website</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* Food Menu using Grid */
+
+        .menu{
+            display:grid;
+            grid-template-columns:1fr 1fr 1fr;
+            gap:20px;
+            padding:20px;
+        }
+
+        .item{
+            border:1px solid gray;
+            padding:15px;
+            text-align:center;
+            overflow:hidden;
+        }
+
+        .item img{
+            width:100%;
+            height:200px;
+            transition:0.3s;
+        }
+
+        /* Image Hover Effect */
+
+        .item img:hover{
+            transform:scale(1.1);
+        }
+
+        /* Reservation Form */
+
+        .reservation{
+            padding:20px;
+            margin:20px;
+            background:#f4f4f4;
+        }
+
+        .reservation input,
+        .reservation select{
+            width:100%;
+            padding:10px;
+            margin:10px 0;
+            border:1px solid gray;
+            border-radius:5px;
+        }
+
+        .reservation button{
+            padding:10px 20px;
+            background:black;
+            color:white;
+            border:none;
+            cursor:pointer;
+        }
+
+        /* Responsive Gallery */
+
+        .gallery{
+            display:grid;
+            grid-template-columns:1fr 1fr 1fr;
+            gap:10px;
+            padding:20px;
+        }
+
+        .gallery img{
+            width:100%;
+            height:200px;
+        }
+
+        /* Responsive Design */
+
+        @media(max-width:768px){
+
+            .menu{
+                grid-template-columns:1fr;
+            }
+
+            .gallery{
+                grid-template-columns:1fr;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- Loading Animation -->
+
+<div class="loader"></div>
+
+<!-- Navigation -->
+
+<nav>
+
+    <a href="#">Home</a>
+    <a href="#">Menu</a>
+    <a href="#">Gallery</a>
+    <a href="#">Reservation</a>
+
+</nav>
+
+<!-- Hero Section -->
+
+<div class="hero">
+
+    <h1>Welcome to My Restaurant</h1>
+
+</div>
+
+<!-- Food Menu -->
+
+<h2 style="text-align:center; color:darkred;">
+    Food Menu
+</h2>
+
+<div class="menu">
+
+    <div class="item">
+
+        <img src="https://via.placeholder.com/300">
+
+        <h3>Pizza</h3>
+
+        <p>$10</p>
+
+    </div>
+
+    <div class="item">
+
+        <img src="https://via.placeholder.com/300">
+
+        <h3>Burger</h3>
+
+        <p>$8</p>
+
+    </div>
+
+    <div class="item">
+
+        <img src="https://via.placeholder.com/300">
+
+        <h3>Pasta</h3>
+
+        <p>$12</p>
+
+    </div>
+
+</div>
+
+<!-- Reservation Form -->
+
+<div class="reservation">
+
+    <h2>Reservation Form</h2>
+
+    <form>
+
+        <input type="text" placeholder="Enter Name">
+
+        <input type="email" placeholder="Enter Email">
+
+        <select>
+
+            <option>Select Time</option>
+            <option>1 PM</option>
+            <option>2 PM</option>
+
+        </select>
+
+        <button>Book Table</button>
+
+    </form>
+
+</div>
+
+<!-- Image Gallery -->
+
+<h2 style="text-align:center;">
+    Food Gallery
+</h2>
+
+<div class="gallery">
+
+    <img src="https://via.placeholder.com/300">
+
+    <img src="https://via.placeholder.com/300">
+
+    <img src="https://via.placeholder.com/300">
+
+</div>
+
+</body>
+</html>

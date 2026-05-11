@@ -1,0 +1,187 @@
+<!--Design a news portal homepage with different CSS implementation methods. Use external CSS for 
+the overall layout and grid system, internal CSS for styling featured article sections, and inline 
+CSS for highlighting breaking news items. Implement a responsive sidebar that converts to top 
+navigation on mobile screens, create custom pagination controls, and design card-based article 
+previews with hover effects revealing article excerpts.-->
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>News Portal</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Internal CSS -->
+    <style>
+
+        /* Featured Article Section */
+
+        .featured{
+            background:#f4f4f4;
+            padding:20px;
+            margin:20px;
+            border-radius:10px;
+        }
+
+        .featured h2{
+            color:darkred;
+        }
+
+        .featured p{
+            font-size:18px;
+        }
+
+        /* Article Cards */
+
+        .card{
+            border:1px solid #ccc;
+            padding:15px;
+            border-radius:10px;
+            position:relative;
+            overflow:hidden;
+            transition:0.3s;
+            background:white;
+        }
+
+        .card:hover{
+            transform:translateY(-5px);
+            box-shadow:0 0 10px gray;
+        }
+
+        /* Hidden Excerpt */
+
+        .excerpt{
+            position:absolute;
+            bottom:-100%;
+            left:0;
+            width:100%;
+            background:rgba(0,0,0,0.8);
+            color:white;
+            padding:10px;
+            transition:0.3s;
+        }
+
+        .card:hover .excerpt{
+            bottom:0;
+        }
+
+        /* Pagination */
+
+        .pagination{
+            text-align:center;
+            margin:20px;
+        }
+
+        .pagination button{
+            padding:10px 15px;
+            margin:5px;
+            border:none;
+            background:black;
+            color:white;
+            cursor:pointer;
+        }
+
+        .pagination button:hover{
+            background:darkred;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+    <h2>News Portal</h2>
+
+    <a href="#">Home</a>
+    <a href="#">World</a>
+    <a href="#">Sports</a>
+    <a href="#">Technology</a>
+    <a href="#">Contact</a>
+
+</div>
+
+<!-- Main Content -->
+
+<div class="main">
+
+    <!-- Inline CSS -->
+
+    <h2 style="color:red; background:yellow; padding:10px; text-align:center;">
+        Breaking News: Major Event Happening Today!
+    </h2>
+
+    <!-- Featured Section -->
+
+    <div class="featured">
+
+        <h2>Featured Article</h2>
+
+        <p>
+            This section highlights the top news story with special styling.
+        </p>
+
+    </div>
+
+    <!-- Article Cards -->
+
+    <div class="articles">
+
+        <div class="card">
+
+            <h3>Article 1</h3>
+
+            <p>Top Headline News</p>
+
+            <div class="excerpt">
+                Detailed excerpt of article 1 appears on hover.
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Article 2</h3>
+
+            <p>Sports News Update</p>
+
+            <div class="excerpt">
+                Detailed excerpt of article 2 appears on hover.
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Article 3</h3>
+
+            <p>Technology News</p>
+
+            <div class="excerpt">
+                Detailed excerpt of article 3 appears on hover.
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Pagination -->
+
+    <div class="pagination">
+
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+
+    </div>
+
+</div>
+
+</body>
+</html>

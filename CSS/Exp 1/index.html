@@ -1,0 +1,169 @@
+<!--Create a responsive e-commerce product page featuring a navigation bar and product
+gallery. Implement a sticky header using external CSS, design product cards with hover effects
+using internal CSS, and style individual featured product highlights with inline CSS. Build a
+responsive grid system that adapts from three columns on desktop to one column on mobile,
+and implement a tabbed interface for product information including description, specifications,
+and reviews.-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>E-Commerce Page</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Internal CSS -->
+    <style>
+
+        .products{
+            display:grid;
+            grid-template-columns:1fr 1fr 1fr;
+            gap:20px;
+            padding:20px;
+        }
+
+        .card{
+            border:1px solid black;
+            padding:15px;
+            text-align:center;
+            transition:0.3s;
+        }
+
+        .card:hover{
+            background:lightblue;
+            transform:scale(1.05);
+        }
+
+        @media(max-width:768px){
+
+            .products{
+                grid-template-columns:1fr;
+            }
+        }
+
+        .tabs{
+            text-align:center;
+            margin-top:20px;
+        }
+
+        .tabs button{
+            padding:10px;
+            margin:5px;
+            cursor:pointer;
+        }
+
+        .tab-content{
+            border:1px solid black;
+            padding:20px;
+            margin:20px;
+            display:none;
+        }
+
+        #description{
+            display:block;
+        }
+
+    </style>
+
+    <script>
+
+        function showTab(tabId){
+
+            let contents=document.querySelectorAll(".tab-content");
+
+            contents.forEach(function(content){
+                content.style.display="none";
+            });
+
+            document.getElementById(tabId).style.display="block";
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+<header>
+    <h2>My Shop</h2>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Products</a>
+    <a href="#tabsTab">Contact</a>
+</nav>
+
+<!-- Inline CSS -->
+<h2 style="color:red; text-align:center;">
+    Featured Product
+</h2>
+
+<div class="products">
+
+    <div class="card">
+        <img src="photo.jpg">
+        <h3>Product 1</h3>
+        <p>$100</p>
+    </div>
+
+    <div class="card">
+        <img src="https://via.placeholder.com/150">
+        <h3>Product 2</h3>
+        <p>$200</p>
+    </div>
+
+    <div class="card">
+        <img src="https://via.placeholder.com/150">
+        <h3>Product 3</h3>
+        <p>$300</p>
+    </div>
+
+</div>
+
+<!-- Tabs -->
+
+<div class="tabs" id="tabsTab">
+
+    <button onclick="showTab('description')">
+        Description
+    </button>
+
+    <button onclick="showTab('specifications')">
+        Specifications
+    </button>
+
+    <button onclick="showTab('reviews')">
+        Reviews
+    </button>
+
+</div>
+
+<!-- Tab Contents -->
+
+<div id="description" class="tab-content">
+    <h3>Description</h3>
+    <p>
+        These are high quality product with modern design.
+    </p>
+</div>
+
+<div id="specifications" class="tab-content">
+    <h3>Specifications</h3>
+    <p>
+        Color: Black <br>
+        Warranty: 1 Year <br>
+        Weight: 1kg
+    </p>
+</div>
+
+<div id="reviews" class="tab-content">
+    <h3>Reviews</h3>
+    <p>
+        ⭐⭐⭐⭐⭐ Excellent Product
+    </p>
+</div>
+
+</body>
+</html>

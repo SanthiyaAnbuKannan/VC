@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Computer System Image Map</title>
+</head>
+
+<body>
+
+<h2>Computer System Image Map</h2>
+<p>Click on any component to see its description.</p>
+
+<img src="motherboard.jpg" alt="Computer Motherboard" usemap="#computer-map" width="800">
+
+<map name="computer-map">
+    <!-- CPU -->
+    <area shape="rect" coords="300,180,430,300" href="#cpu" alt="CPU">
+
+    <!-- RAM -->
+    <area shape="rect" coords="470,120,650,280" href="#ram" alt="RAM">
+
+    <!-- GPU -->
+    <area shape="rect" coords="120,350,380,500" href="#gpu" alt="GPU">
+
+    <!-- Storage -->
+    <area shape="rect" coords="550,360,720,520" href="#storage" alt="Storage">
+</map>
+
+<hr>
+
+<h3 id="cpu">CPU (Central Processing Unit)</h3>
+<p>
+The CPU is the brain of the computer. It processes instructions and performs calculations.
+</p>
+
+<h3 id="ram">RAM (Random Access Memory)</h3>
+<p>
+RAM temporarily stores data and programs that the CPU needs while the computer is running.
+</p>
+
+<h3 id="gpu">GPU (Graphics Processing Unit)</h3>
+<p>
+The GPU handles graphics rendering and improves visual performance for games and videos.
+</p>
+
+<h3 id="storage">Storage (Hard Disk / SSD)</h3>
+<p>
+Storage devices permanently store the operating system, software, and user data.
+</p>
+
+</body>
+</html>
